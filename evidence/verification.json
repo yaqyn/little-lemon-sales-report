@@ -1,0 +1,69 @@
+{
+  "verified_at_utc": "2026-11-05T14:06:19.616775+00:00",
+  "mysql": {
+    "version": "8.4.13",
+    "database": "little_lemon_sales",
+    "pool_name": "pool_a",
+    "pool_size": 2,
+    "account_privileges_scoped_to_sales_schema": true
+  },
+  "tests": {
+    "run": 44,
+    "unit": 9,
+    "mysql_integration": 35,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "duration_seconds": 4.564
+  },
+  "notebook": {
+    "executed_at_utc": "2026-11-05T14:10:38.985825+00:00",
+    "code_cells": 14,
+    "executed_code_cells": 14,
+    "unexpected_errors": 0,
+    "kernel_python": "3.14.8",
+    "successful_full_runs": 3,
+    "runner_requests_kernel_cleanup": true
+  },
+  "stored_procedures": [
+    "CancelBooking",
+    "GetCustomerOrders",
+    "GetEmployeeBookings",
+    "GetMaxQuantity",
+    "GetPopularMenuItems",
+    "GetSalesReport",
+    "ManageBooking",
+    "UpdateBooking"
+  ],
+  "validation": {
+    "row_counts": {
+      "Customers": 8,
+      "Employees": 4,
+      "MenuItems": 10,
+      "Bookings": 12,
+      "Orders": 12,
+      "OrderItems": 36,
+      "OrderDeliveryStatus": 12
+    },
+    "order_total_mismatches": [],
+    "foreign_key_violations": 0
+  },
+  "sales": {
+    "TotalOrders": 12,
+    "TotalSales": "835.00",
+    "AverageOrderValue": "69.58",
+    "HighestOrderValue": "112.50",
+    "LowestOrderValue": "31.00"
+  },
+  "dependency_audit": "No known vulnerabilities found in installed dependencies",
+  "original_django_project": {
+    "original_repository": "https://github.com/yaqyn/little-lemon-django-capstone",
+    "original_commit": "3b1f6602caa9c908821be6dd1724611faa8ccdc7",
+    "tracked_files_checked": 69,
+    "source_unchanged": true,
+    "working_tree_clean": true,
+    "database_tables_compared": 14,
+    "database_records_unchanged": true,
+    "method": "Before/after SHA256 comparison of every tracked file and sorted rows in every existing Django table. Private row data and fingerprints are not published."
+  }
+}

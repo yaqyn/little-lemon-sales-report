@@ -1,0 +1,433 @@
+{
+  "summary": [
+    {
+      "TotalOrders": 12,
+      "TotalSales": "835.00",
+      "AverageOrderValue": "69.58",
+      "HighestOrderValue": "112.50",
+      "LowestOrderValue": "31.00"
+    }
+  ],
+  "category_sales": [
+    {
+      "Type": "Mains",
+      "QuantitySold": "24",
+      "TotalSales": "478.50"
+    },
+    {
+      "Type": "Starters",
+      "QuantitySold": "15",
+      "TotalSales": "156.00"
+    },
+    {
+      "Type": "Beverages",
+      "QuantitySold": "37",
+      "TotalSales": "133.00"
+    },
+    {
+      "Type": "Desserts",
+      "QuantitySold": "9",
+      "TotalSales": "67.50"
+    }
+  ],
+  "popular_items": [
+    {
+      "ItemID": 3006,
+      "ItemName": "Sparkling water",
+      "Type": "Beverages",
+      "QuantitySold": "17",
+      "ItemSales": "51.00"
+    },
+    {
+      "ItemID": 3007,
+      "ItemName": "Lemonade",
+      "Type": "Beverages",
+      "QuantitySold": "12",
+      "ItemSales": "54.00"
+    },
+    {
+      "ItemID": 3003,
+      "ItemName": "Lemon chicken",
+      "Type": "Mains",
+      "QuantitySold": "11",
+      "ItemSales": "214.50"
+    },
+    {
+      "ItemID": 3005,
+      "ItemName": "Lemon dessert",
+      "Type": "Desserts",
+      "QuantitySold": "9",
+      "ItemSales": "67.50"
+    },
+    {
+      "ItemID": 3001,
+      "ItemName": "Greek salad",
+      "Type": "Starters",
+      "QuantitySold": "8",
+      "ItemSales": "100.00"
+    },
+    {
+      "ItemID": 3008,
+      "ItemName": "Espresso",
+      "Type": "Beverages",
+      "QuantitySold": "8",
+      "ItemSales": "28.00"
+    },
+    {
+      "ItemID": 3002,
+      "ItemName": "Bruschetta",
+      "Type": "Starters",
+      "QuantitySold": "7",
+      "ItemSales": "56.00"
+    },
+    {
+      "ItemID": 3009,
+      "ItemName": "Grilled sea bass",
+      "Type": "Mains",
+      "QuantitySold": "7",
+      "ItemSales": "168.00"
+    },
+    {
+      "ItemID": 3004,
+      "ItemName": "Garden pasta",
+      "Type": "Mains",
+      "QuantitySold": "6",
+      "ItemSales": "96.00"
+    },
+    {
+      "ItemID": 3010,
+      "ItemName": "Marinated olives",
+      "Type": "Starters",
+      "QuantitySold": "0",
+      "ItemSales": "0.00"
+    }
+  ],
+  "least_popular_items": [
+    {
+      "ItemID": 3010,
+      "ItemName": "Marinated olives",
+      "Type": "Starters",
+      "QuantitySold": "0",
+      "ItemSales": "0.00"
+    },
+    {
+      "ItemID": 3004,
+      "ItemName": "Garden pasta",
+      "Type": "Mains",
+      "QuantitySold": "6",
+      "ItemSales": "96.00"
+    },
+    {
+      "ItemID": 3002,
+      "ItemName": "Bruschetta",
+      "Type": "Starters",
+      "QuantitySold": "7",
+      "ItemSales": "56.00"
+    },
+    {
+      "ItemID": 3009,
+      "ItemName": "Grilled sea bass",
+      "Type": "Mains",
+      "QuantitySold": "7",
+      "ItemSales": "168.00"
+    },
+    {
+      "ItemID": 3001,
+      "ItemName": "Greek salad",
+      "Type": "Starters",
+      "QuantitySold": "8",
+      "ItemSales": "100.00"
+    }
+  ],
+  "daily_sales": [
+    {
+      "SalesDate": "2026-01-15",
+      "TotalOrders": 2,
+      "TotalSales": "104.00"
+    },
+    {
+      "SalesDate": "2026-02-15",
+      "TotalOrders": 2,
+      "TotalSales": "134.00"
+    },
+    {
+      "SalesDate": "2026-03-15",
+      "TotalOrders": 2,
+      "TotalSales": "130.00"
+    },
+    {
+      "SalesDate": "2026-04-15",
+      "TotalOrders": 2,
+      "TotalSales": "187.00"
+    },
+    {
+      "SalesDate": "2026-05-15",
+      "TotalOrders": 2,
+      "TotalSales": "103.50"
+    },
+    {
+      "SalesDate": "2026-06-15",
+      "TotalOrders": 2,
+      "TotalSales": "176.50"
+    }
+  ],
+  "customer_history": [
+    {
+      "CustomerID": 1001,
+      "CustomerName": "Maya Bennett",
+      "OrderID": 5001,
+      "OrderDate": "2026-01-15",
+      "TableNo": 1,
+      "TotalCost": "73.00",
+      "DeliveryStatus": "Delivered"
+    },
+    {
+      "CustomerID": 1001,
+      "CustomerName": "Maya Bennett",
+      "OrderID": 5005,
+      "OrderDate": "2026-03-15",
+      "TableNo": 1,
+      "TotalCost": "60.00",
+      "DeliveryStatus": "Served"
+    },
+    {
+      "CustomerID": 1001,
+      "CustomerName": "Maya Bennett",
+      "OrderID": 5012,
+      "OrderDate": "2026-06-15",
+      "TableNo": 2,
+      "TotalCost": "112.50",
+      "DeliveryStatus": "Served"
+    },
+    {
+      "CustomerID": 1002,
+      "CustomerName": "Omar Faris",
+      "OrderID": 5002,
+      "OrderDate": "2026-01-15",
+      "TableNo": 2,
+      "TotalCost": "31.00",
+      "DeliveryStatus": "Served"
+    },
+    {
+      "CustomerID": 1002,
+      "CustomerName": "Omar Faris",
+      "OrderID": 5008,
+      "OrderDate": "2026-04-15",
+      "TableNo": 2,
+      "TotalCost": "112.00",
+      "DeliveryStatus": "Served"
+    },
+    {
+      "CustomerID": 1003,
+      "CustomerName": "Sofia Chen",
+      "OrderID": 5003,
+      "OrderDate": "2026-02-15",
+      "TableNo": 1,
+      "TotalCost": "39.50",
+      "DeliveryStatus": "Served"
+    },
+    {
+      "CustomerID": 1003,
+      "CustomerName": "Sofia Chen",
+      "OrderID": 5011,
+      "OrderDate": "2026-06-15",
+      "TableNo": 1,
+      "TotalCost": "64.00",
+      "DeliveryStatus": "Served"
+    },
+    {
+      "CustomerID": 1004,
+      "CustomerName": "Daniel Ortiz",
+      "OrderID": 5004,
+      "OrderDate": "2026-02-15",
+      "TableNo": 2,
+      "TotalCost": "94.50",
+      "DeliveryStatus": "Delivered"
+    },
+    {
+      "CustomerID": 1005,
+      "CustomerName": "Amira Patel",
+      "OrderID": 5006,
+      "OrderDate": "2026-03-15",
+      "TableNo": 2,
+      "TotalCost": "70.00",
+      "DeliveryStatus": "Served"
+    },
+    {
+      "CustomerID": 1006,
+      "CustomerName": "Lucas Reed",
+      "OrderID": 5007,
+      "OrderDate": "2026-04-15",
+      "TableNo": 1,
+      "TotalCost": "75.00",
+      "DeliveryStatus": "Delivered"
+    },
+    {
+      "CustomerID": 1007,
+      "CustomerName": "Nora Hassan",
+      "OrderID": 5009,
+      "OrderDate": "2026-05-15",
+      "TableNo": 1,
+      "TotalCost": "35.00",
+      "DeliveryStatus": "Served"
+    },
+    {
+      "CustomerID": 1008,
+      "CustomerName": "Ethan Brooks",
+      "OrderID": 5010,
+      "OrderDate": "2026-05-15",
+      "TableNo": 2,
+      "TotalCost": "68.50",
+      "DeliveryStatus": "Delivered"
+    }
+  ],
+  "top_customers": [
+    {
+      "CustomerID": 1001,
+      "CustomerName": "Maya Bennett",
+      "TotalOrders": 3,
+      "TotalSpent": "245.50"
+    },
+    {
+      "CustomerID": 1002,
+      "CustomerName": "Omar Faris",
+      "TotalOrders": 2,
+      "TotalSpent": "143.00"
+    },
+    {
+      "CustomerID": 1003,
+      "CustomerName": "Sofia Chen",
+      "TotalOrders": 2,
+      "TotalSpent": "103.50"
+    },
+    {
+      "CustomerID": 1004,
+      "CustomerName": "Daniel Ortiz",
+      "TotalOrders": 1,
+      "TotalSpent": "94.50"
+    },
+    {
+      "CustomerID": 1006,
+      "CustomerName": "Lucas Reed",
+      "TotalOrders": 1,
+      "TotalSpent": "75.00"
+    }
+  ],
+  "booking_count": [
+    {
+      "TotalBookings": 12
+    }
+  ],
+  "booking_activity": [
+    {
+      "BookingDate": "2026-01-15",
+      "BookingCount": 2
+    },
+    {
+      "BookingDate": "2026-02-15",
+      "BookingCount": 2
+    },
+    {
+      "BookingDate": "2026-03-15",
+      "BookingCount": 2
+    },
+    {
+      "BookingDate": "2026-04-15",
+      "BookingCount": 2
+    },
+    {
+      "BookingDate": "2026-05-15",
+      "BookingCount": 2
+    },
+    {
+      "BookingDate": "2026-06-15",
+      "BookingCount": 2
+    }
+  ],
+  "highest_sale": [
+    {
+      "OrderID": 5012,
+      "CustomerID": 1001,
+      "OrderDate": "2026-06-15",
+      "TotalCost": "112.50"
+    }
+  ],
+  "lowest_sale": [
+    {
+      "OrderID": 5002,
+      "CustomerID": 1002,
+      "OrderDate": "2026-01-15",
+      "TotalCost": "31.00"
+    }
+  ],
+  "repeat_customers": [
+    {
+      "CustomerID": 1001,
+      "CustomerName": "Maya Bennett",
+      "TotalOrders": 3,
+      "TotalSpent": "245.50"
+    },
+    {
+      "CustomerID": 1002,
+      "CustomerName": "Omar Faris",
+      "TotalOrders": 2,
+      "TotalSpent": "143.00"
+    },
+    {
+      "CustomerID": 1003,
+      "CustomerName": "Sofia Chen",
+      "TotalOrders": 2,
+      "TotalSpent": "103.50"
+    }
+  ],
+  "revenue_trends": [
+    {
+      "SalesMonth": "2026-01",
+      "TotalOrders": 2,
+      "TotalSales": "104.00",
+      "PreviousSales": null,
+      "RevenueChange": null,
+      "ChangePercent": null
+    },
+    {
+      "SalesMonth": "2026-02",
+      "TotalOrders": 2,
+      "TotalSales": "134.00",
+      "PreviousSales": "104.00",
+      "RevenueChange": "30.00",
+      "ChangePercent": "28.85"
+    },
+    {
+      "SalesMonth": "2026-03",
+      "TotalOrders": 2,
+      "TotalSales": "130.00",
+      "PreviousSales": "134.00",
+      "RevenueChange": "-4.00",
+      "ChangePercent": "-2.99"
+    },
+    {
+      "SalesMonth": "2026-04",
+      "TotalOrders": 2,
+      "TotalSales": "187.00",
+      "PreviousSales": "130.00",
+      "RevenueChange": "57.00",
+      "ChangePercent": "43.85"
+    },
+    {
+      "SalesMonth": "2026-05",
+      "TotalOrders": 2,
+      "TotalSales": "103.50",
+      "PreviousSales": "187.00",
+      "RevenueChange": "-83.50",
+      "ChangePercent": "-44.65"
+    },
+    {
+      "SalesMonth": "2026-06",
+      "TotalOrders": 2,
+      "TotalSales": "176.50",
+      "PreviousSales": "103.50",
+      "RevenueChange": "73.00",
+      "ChangePercent": "70.53"
+    }
+  ]
+}

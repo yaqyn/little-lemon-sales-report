@@ -1,0 +1,10 @@
+{
+  "original_repository": "https://github.com/yaqyn/little-lemon-django-capstone",
+  "original_commit": "3b1f6602caa9c908821be6dd1724611faa8ccdc7",
+  "tracked_files_checked": 69,
+  "source_unchanged": true,
+  "working_tree_clean": true,
+  "database_tables_compared": 14,
+  "database_records_unchanged": true,
+  "method": "Before/after SHA256 comparison of every tracked file and sorted rows in every existing Django table. Private row data and fingerprints are not published."
+}

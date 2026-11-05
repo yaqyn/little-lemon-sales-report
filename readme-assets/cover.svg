@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560" role="img" aria-labelledby="title description">
+  <title id="title">Little Lemon analysis and sales report</title>
+  <desc id="description">White typography on forest green beside an illustrated restaurant receipt and a yellow lemon. The receipt is decorative artwork, not a chart or execution result.</desc>
+  <rect width="1400" height="560" fill="#24483e"/>
+  <path d="M80 82h46" stroke="#f4ce14" stroke-width="5" stroke-linecap="round"/>
+  <text x="80" y="206" fill="#fff" font-family="Georgia, Times New Roman, serif" font-size="98" letter-spacing="-3">Little Lemon</text>
+  <text x="84" y="276" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="38">Analysis &amp; sales report</text>
+  <text x="84" y="333" fill="#cad7c4" font-family="Arial, Helvetica, sans-serif" font-size="24">Restaurant records. SQL queries. Readable results.</text>
+  <path d="M84 410h650" stroke="#638175"/>
+  <text x="84" y="465" fill="#cad7c4" font-family="Arial, Helvetica, sans-serif" font-size="24">Python</text>
+  <path d="M201 446v23M350 446v23" stroke="#638175"/>
+  <text x="233" y="465" fill="#cad7c4" font-family="Arial, Helvetica, sans-serif" font-size="24">MySQL</text>
+  <text x="382" y="465" fill="#cad7c4" font-family="Arial, Helvetica, sans-serif" font-size="24">Jupyter Notebook</text>
+  <g transform="translate(940 79) rotate(5 150 190)" aria-hidden="true">
+    <path d="M0 0h290v385l-16-10-16 10-16-10-16 10-16-10-16 10-16-10-16 10-16-10-16 10-16-10-16 10-16-10-16 10-16-10-16 10-16-10-16 10-16-10-2 1Z" fill="#fbfcf8"/>
+    <text x="28" y="57" fill="#24483e" font-family="Georgia, Times New Roman, serif" font-size="29">Little Lemon</text>
+    <text x="29" y="88" fill="#52675c" font-family="Arial, Helvetica, sans-serif" font-size="17">Sales ledger</text>
+    <path d="M29 112h228" stroke="#c6d3ca" stroke-dasharray="4 5"/>
+    <g stroke="#97ac9e" stroke-width="10" stroke-linecap="round"><path d="M34 153h120M216 153h34M34 193h145M216 193h34M34 233h95M216 233h34"/></g>
+    <path d="M29 274h228" stroke="#c6d3ca"/>
+    <text x="29" y="322" fill="#24483e" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="20">Orders to insights</text>
+  </g>
+  <g transform="translate(1190 398) rotate(-24)" aria-hidden="true">
+    <path d="M-64 1c8-37 41-62 82-62 39 0 69 23 81 59l11 9-11 8c-12 36-42 58-81 58-41 0-74-24-82-61l-11-5Z" fill="#f4ce14"/>
+    <path d="M49-60c9-34 36-49 68-36-14 33-39 45-68 36Z" fill="#cad7c4"/>
+    <path d="M-36-14c12-15 28-23 46-23" fill="none" stroke="#fff3a2" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

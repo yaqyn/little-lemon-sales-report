@@ -1,0 +1,2 @@
+# Preserve the plotting library's generated SVG formatting.
+output/*.svg linguist-generated=true -whitespace
