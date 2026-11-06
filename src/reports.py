@@ -1,6 +1,9 @@
 """SQL reports calculated from actual records, plus shareable report artifacts."""
 import json
+import os
 from pathlib import Path
+import stat
+import tempfile
 from .connection_pool import ROOT, pooled_cursor
 
 REPORT_QUERIES = {
@@ -67,12 +70,33 @@ def print_table(title, rows):
         print(" | ".join(value.ljust(width) for value,width in zip(row,widths)))
 
 
+def write_text_atomic(path, content):
+    """Replace a text artifact only after its complete contents reach disk."""
+    path = Path(path)
+    temporary_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+                "w", encoding="utf-8", dir=path.parent,
+                prefix=f".{path.name}.", delete=False) as temporary:
+            temporary_path = Path(temporary.name)
+            temporary.write(content)
+            temporary.flush()
+            os.fsync(temporary.fileno())
+        if path.exists():
+            temporary_path.chmod(stat.S_IMODE(path.stat().st_mode))
+        os.replace(temporary_path, path)
+    except Exception:
+        if temporary_path is not None:
+            temporary_path.unlink(missing_ok=True)
+        raise
+
+
 def write_report(pool):
     """Create JSON, Markdown and an SVG plot from the same actual query results."""
     reports = {name: run_report(pool, name) for name in REPORT_QUERIES}
     output = ROOT / "output"
     output.mkdir(exist_ok=True)
-    (output / "sales_report.json").write_text(json.dumps(reports, indent=2, default=str) + "\n")
+    write_text_atomic(output / "sales_report.json", json.dumps(reports, indent=2, default=str) + "\n")
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -98,6 +122,6 @@ def write_report(pool):
             lines += ["No records."]
         lines += [""]
     lines += ["## Interpretation and limits", "", "This sample spans selected dates rather than a complete trading history. Month-to-month changes describe only these demonstration records. Zero-quantity menu items have no recorded orders in this dataset; this is not evidence of real customer preferences. Sales are gross recorded order values, not profit. CancelBooking refuses bookings linked to orders so sales history remains intact.", ""]
-    (ROOT / "REPORT.md").write_text("\n".join(lines))
+    write_text_atomic(ROOT / "REPORT.md", "\n".join(lines))
     print("Restaurant sales report saved to REPORT.md and output/.")
     return reports
