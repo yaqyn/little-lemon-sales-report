@@ -17,6 +17,10 @@ REPORT_QUERIES = {
         COALESCE(SUM(oi.Quantity*oi.UnitPrice),0) AS ItemSales FROM MenuItems m LEFT JOIN OrderItems oi ON m.ItemID=oi.ItemID
         GROUP BY m.ItemID,m.ItemName,m.Type ORDER BY QuantitySold,m.ItemID LIMIT 5""",
     "daily_sales": "SELECT OrderDate AS SalesDate,COUNT(*) AS TotalOrders,SUM(TotalCost) AS TotalSales FROM Orders GROUP BY OrderDate ORDER BY OrderDate",
+    "delivery_status": """SELECT COALESCE(d.DeliveryStatus,'Unassigned') AS DeliveryStatus,
+        COUNT(*) AS TotalOrders,SUM(o.TotalCost) AS TotalSales FROM Orders o
+        LEFT JOIN OrderDeliveryStatus d ON o.OrderID=d.OrderID
+        GROUP BY COALESCE(d.DeliveryStatus,'Unassigned') ORDER BY DeliveryStatus""",
     "customer_history": """SELECT c.CustomerID,c.CustomerName,o.OrderID,o.OrderDate,o.TableNo,o.TotalCost,d.DeliveryStatus
         FROM Customers c JOIN Orders o ON c.CustomerID=o.CustomerID
         LEFT JOIN OrderDeliveryStatus d ON o.OrderID=d.OrderID ORDER BY c.CustomerID,o.OrderDate,o.OrderID""",
