@@ -7,7 +7,8 @@ from tests.support import MySQLIntegrationCase
 
 REQUIRED_REPORTS = {'summary', 'category_sales', 'popular_items', 'least_popular_items',
                     'daily_sales', 'customer_history', 'top_customers', 'booking_activity',
-                    'revenue_trends', 'booking_count', 'highest_sale', 'lowest_sale', 'repeat_customers'}
+                    'revenue_trends', 'booking_count', 'highest_sale', 'lowest_sale',
+                    'repeat_customers', 'delivery_status'}
 
 
 class ReportIntegrationTests(MySQLIntegrationCase):
@@ -62,6 +63,16 @@ class ReportIntegrationTests(MySQLIntegrationCase):
         rows = run_report(self.pool, 'daily_sales')
         actual = {str(row['SalesDate']): str(row['TotalSales']) for row in rows}
         self.assertEqual(actual, self.demo_expected()['sales_by_date'])
+
+    def test_delivery_status_totals_reconcile_to_all_orders(self):
+        rows = run_report(self.pool, 'delivery_status')
+        summary = run_report(self.pool, 'summary')[0]
+        self.assertEqual(sum(row['TotalOrders'] for row in rows), summary['TotalOrders'])
+        self.assertEqual(sum(row['TotalSales'] for row in rows), summary['TotalSales'])
+        self.assertEqual(
+            [row['DeliveryStatus'] for row in rows],
+            sorted(row['DeliveryStatus'] for row in rows),
+        )
 
     def test_monthly_revenue_trend_preserves_total_sales(self):
         rows = run_report(self.pool, 'revenue_trends')
