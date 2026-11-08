@@ -7,7 +7,7 @@ from unittest.mock import MagicMock, patch
 from mysql.connector import Error
 from mysql.connector.errors import PoolError
 
-from src.connection_pool import create_pool, pooled_cursor
+from src.connection_pool import create_pool, pooled_cursor, validate_config
 from tests.support import MySQLIntegrationCase
 
 
@@ -78,6 +78,32 @@ class PoolCleanupUnitTests(unittest.TestCase):
         with patch('src.connection_pool.MySQLConnectionPool') as constructor:
             with self.assertRaises(ValueError):
                 create_pool(config)
+            constructor.assert_not_called()
+
+    def test_connection_config_is_normalized_before_pool_creation(self):
+        config = {'host': ' db.internal ', 'port': '3307', 'user': ' analyst ',
+                  'password': 'fixture-only-value', 'database': 'little_lemon_sales'}
+        validated = validate_config(config)
+        self.assertEqual(validated['host'], 'db.internal')
+        self.assertEqual(validated['port'], 3307)
+        self.assertEqual(validated['user'], 'analyst')
+        self.assertEqual(config['host'], ' db.internal ')
+
+    def test_invalid_connection_settings_fail_before_mysql_is_contacted(self):
+        base = {'host': '127.0.0.1', 'port': 3306, 'user': 'fixture',
+                'password': 'fixture-only-value', 'database': 'little_lemon_sales'}
+        invalid = [
+            ({**base, 'host': ' '}, 'MYSQL_HOST'),
+            ({**base, 'port': 'not-a-port'}, 'MYSQL_PORT'),
+            ({**base, 'port': 0}, 'MYSQL_PORT'),
+            ({**base, 'port': 65536}, 'MYSQL_PORT'),
+            ({**base, 'port': True}, 'MYSQL_PORT'),
+            ({**base, 'user': ''}, 'MYSQL_USER'),
+        ]
+        with patch('src.connection_pool.MySQLConnectionPool') as constructor:
+            for config, message in invalid:
+                with self.subTest(config=config), self.assertRaisesRegex(ValueError, message):
+                    create_pool(config)
             constructor.assert_not_called()
 
 
