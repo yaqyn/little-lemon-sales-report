@@ -12,26 +12,45 @@ ROOT = Path(__file__).resolve().parents[1]
 DATABASE_NAME = "little_lemon_sales"
 
 
+def validate_config(config):
+    """Return a normalized connection config or raise before contacting MySQL."""
+    validated = dict(config)
+    if validated.get("database", DATABASE_NAME) != DATABASE_NAME:
+        raise ValueError("MYSQL_DATABASE must be little_lemon_sales; other schemas are refused.")
+    if not str(validated.get("host", "")).strip():
+        raise ValueError("MYSQL_HOST must not be blank.")
+    if not str(validated.get("user", "")).strip() or not validated.get("password"):
+        raise ValueError("Set MYSQL_USER and MYSQL_PASSWORD in the environment or private .env.")
+    port = validated.get("port", 3306)
+    if isinstance(port, bool):
+        raise ValueError("MYSQL_PORT must be an integer between 1 and 65535.")
+    try:
+        port = int(port)
+    except (TypeError, ValueError) as error:
+        raise ValueError("MYSQL_PORT must be an integer between 1 and 65535.") from error
+    if not 1 <= port <= 65535:
+        raise ValueError("MYSQL_PORT must be an integer between 1 and 65535.")
+    validated["host"] = str(validated["host"]).strip()
+    validated["user"] = str(validated["user"]).strip()
+    validated["port"] = port
+    validated["database"] = DATABASE_NAME
+    return validated
+
+
 def load_config():
     load_dotenv(ROOT / ".env")
-    config = {
+    return validate_config({
         "host": os.getenv("MYSQL_HOST", "127.0.0.1"),
-        "port": int(os.getenv("MYSQL_PORT", "3306")),
+        "port": os.getenv("MYSQL_PORT", "3306"),
         "user": os.getenv("MYSQL_USER", ""),
         "password": os.getenv("MYSQL_PASSWORD", ""),
         "database": os.getenv("MYSQL_DATABASE", DATABASE_NAME),
-    }
-    if config["database"] != DATABASE_NAME:
-        raise ValueError("MYSQL_DATABASE must be little_lemon_sales; other schemas are refused.")
-    if not config["user"] or not config["password"]:
-        raise ValueError("Set MYSQL_USER and MYSQL_PASSWORD in the environment or private .env.")
-    return config
+    })
 
 
 def create_pool(config=None):
-    dbconfig = dict(load_config() if config is None else config)
-    if dbconfig.pop("database", DATABASE_NAME) != DATABASE_NAME:
-        raise ValueError("Only the separate little_lemon_sales database is allowed.")
+    dbconfig = validate_config(load_config() if config is None else config)
+    dbconfig.pop("database")
     print("Connecting to MySQL database...")
     print("Creating connection pool...")
     try:
